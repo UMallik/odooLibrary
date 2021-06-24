@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="library_management.library_group_user" model="res.groups">
+        <field name="name">Librarian</field>
+    </record>
+</odoo>

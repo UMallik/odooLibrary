@@ -1,0 +1,18 @@
+<?xml version = "1.0"?>
+
+<odoo>
+    <!-- Library App Menu -->
+    <menuitem id ="menu_library" name="Library"/>
+    <!-- Action to Open the Book List -->
+    <act_window id="action_library_book" name="Library Books" res_model="library.books" view_mode="kanban,tree,form"/>
+    <!-- Action to Open Book Categories -->
+    <act_window id="action_library_category" name="Book Categories" res_model="library.book.category" view_mode="tree,form"/>
+    <!-- Menu Item to Open the Book List -->
+    <menuitem id="menu_library_book" name="Books" parent="menu_library" action="action_library_book"/>
+    <!-- Menu Item to Open Book Categories -->
+    <menuitem
+        id="menu_library_category"
+        name="Categories"
+        parent="menu_library"
+        action="action_library_category"/>
+</odoo>

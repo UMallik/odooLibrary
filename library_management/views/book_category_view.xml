@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="category_tree_view" model="ir.ui.view">
+        <field name="name">Category List</field>
+        <field name="model">library.book.category</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="highlighted_id"/>
+            </tree>
+        </field>
+    </record>
+    <!-- FOrm View -->
+    <record id="category_form_view" model="ir.ui.view">
+        <field name="name">Category Form</field> 
+        <field name="model">library.book.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <group name="group_top">
+                    <group name="group_left">
+                        <field name="name"/>
+                        <field name="child_id" widget="many2many_tags"/>
+                    </group>
+                    <group name="group_left">
+                        <field name="highlighted_id"/>
+                    </group>
+                </group>
+
+            </form>
+        </field>
+    </record>
+
+</odoo>

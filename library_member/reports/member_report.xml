@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report id="action_library_member_report"
+            string="Library Members"
+            model="library.member"
+            report_type="qweb-html"
+            name="library_member.report_library_member_template"/>
+    <template id="report_library_member_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="container">
+                        <div class="row bg-primary">
+                            <!-- header content -->
+                            <div class="col-3">Name</div>
+                            <div class="col-2">Card No.</div>
+                            <div class="col-3">Contact</div>
+                            <div class="col-4">Picture</div>
+                        </div>
+                        <t t-foreach="docs" t-as="doc">
+                            <div class="row mt8 mb8">
+                                <div class="col-3">
+                                    <h4><span t-field="doc.partner_id.name"/></h4>
+                                </div>
+                                <div class="col-2">
+                                    <span t-field="doc.card_number"/>
+                                </div>
+                                <div class="col-3">
+                                    <div t-field="doc.partner_id"
+                                        t-options="{'widget':'contact',
+                                                    'fields':['address','email','phone']}"/>
+                                </div>
+                                <div class="col-4">
+                                    <ul class="list-unstyled">
+                                        <li class="media">
+                                            <span t-field="doc.partner_id.image_1920"
+                                                    t-options="{'widget':'image',
+                                                                'width':'24',
+                                                                'height':'24'}"/>
+                                        </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                      
+                </div>
+            </t>
+        </t>
+    </template>
+    
+
+</odoo>
